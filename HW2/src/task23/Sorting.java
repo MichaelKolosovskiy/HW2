@@ -4,11 +4,11 @@ import java.util.Random;
 public class Sorting {
 
     int[] createArray(int i) {
-        int[] arr = new int[i];
-        for (int j = 0; j < arr.length; j++) {
-            arr[j] = new Random().nextInt(54);
+        int[] array = new int[i];
+        for (int j = 0; j < array.length; j++) {
+            array[j] = new Random().nextInt(54);
         }
-        return arr;
+        return array;
     }
 
     private static void swap(int i, int j) {
@@ -17,58 +17,57 @@ public class Sorting {
         i = buf;
     }
 
-    public static int[] insertionSort(int[] arr) {
+    public static int[] insertionSort(int[] array) {
         int buf;
-        for (int i = 1; i < arr.length; i++) {
-            buf = arr[i];
+        for (int i = 1; i < array.length; i++) {
+            buf = array[i];
             int j = i - 1;
-            while (j >= 0 && arr[j] < buf) {
-                arr[j + 1] = arr[j];
+            while (j >= 0 && array[j] < buf) {
+                array[j + 1] = array[j];
                 j = j - 1;
             }
-            arr[j + 1] = buf;
+            array[j + 1] = buf;
         }
-        return arr;
+        return array;
     }
 
-    public static int[] bubbleSort(int[] arr) {
-        for (int j = 0; j < arr.length; j++) {
-            for (int i = 1; i < arr.length - j; i++) {
-                if (arr[i] < arr[i - 1]) {
+    public static int[] bubbleSort(int[] array) {
+        for (int j = 0; j < array.length; j++) {
+            for (int i = 1; i < array.length - j; i++) {
+                if (array[i] < array[i - 1]) {
                     swap(i, i - 1);
                 }
             }
         }
-        return arr;
+        return array;
     }
 
-    public static int[] shellSort(int[] arr) {
-        int x = arr.length / 2;
+    public static int[] shellSort(int[] array) {
+        int x = array.length / 2;
         while (x > 0) {
             int j = 0;
-            for (int i = x; i < arr.length; i++) {
-                int buf = arr[i];
-                for (j = i; j >= x && arr[j - x] > buf; j -= x) {
-                    arr[j] = arr[j - x];
+            for (int i = x; i < array.length; i++) {
+                int buf = array[i];
+                for (j = i; j >= x && array[j - x] > buf; j -= x) {
+                    array[j] = array[j - x];
                 }
-                arr[j] = buf;
+                array[j] = buf;
             }
             x = x / 2;
         }
-        return arr;
+        return array;
     }
 
-    public static int[] selectionSort(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
+    public static int[] selectionSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
             int element = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] < arr[element]) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[element]) {
                     element = j;
                 }
             }
             swap(element, i);
         }
-        return arr;
+        return array;
     }
 }
-
