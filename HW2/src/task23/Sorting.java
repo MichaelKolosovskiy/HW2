@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Sorting {
 
-    int[] createArray(int i) {
-        int[] array = new int[i];
+    int[] createArray(int length) {
+        int[] array = new int[length];
         for (int j = 0; j < array.length; j++) {
             array[j] = new Random().nextInt(54);
         }
