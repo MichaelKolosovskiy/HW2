@@ -3,7 +3,6 @@ package task24;
 public class FinalClassExemple {
 
     private final String name;
-
     private final int age;
 
     public int getAge() {
